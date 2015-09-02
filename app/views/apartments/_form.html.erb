@@ -1,54 +1,54 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-12'>
 
-<div class='row'>
+      <%= form_for(@apartment, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+        <%= render "shared/errors", object: @apartment %>
+        <div class='form-group'>
 
-<div class='col-md-12'>
+        <div class='control-label col-md-1'>
 
-  <%= form_for(@apartment, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+        <%= f.label :title %>
 
-<div class='form-group'>
+        </div>
 
-<div class='control-label col-md-1'>
+        <div class='col-md-11'>
 
-<%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control', placeholder: 'Title of article', autofocus: true %>
 
-</div>
+        </div>
 
-<div class='col-md-11'>
+        </div>
 
-<%= f.text_field :title, class: 'form-control', placeholder: 'Title of article', autofocus: true %>
+        <div class='form-group'>
 
-</div>
+        <div class='control-label col-md-1'>
 
-</div>
+          <%= f.label :description %>
 
-<div class='form-group'>
+        </div>
 
-<div class='control-label col-md-1'>
+        <div class='col-md-11'>
 
-  <%= f.label :description %>
+          <%= f.text_area :description, rows: 10, class: 'form-control', placeholder: 'Body of article' %>
 
-</div>
+        </div>
 
-<div class='col-md-11'>
+        </div>
 
-  <%= f.text_area :description, rows: 10, class: 'form-control', placeholder: 'Body of article' %>
+        <div class='form-group'>
 
-</div>
+        <div class='col-md-offset-1 col-md-11'>
 
-</div>
+        <%= f.submit class: 'btn btn-primary btn-lg pull-right' %>
 
-<div class='form-group'>
+        </div>
 
-<div class='col-md-offset-1 col-md-11'>
+        </div>
 
-<%= f.submit class: 'btn btn-primary btn-lg pull-right' %>
+      <% end %>
 
-</div>
+    </div>
 
-</div>
-
-<% end %>
-
-</div>
-
+  </div>
 </div>

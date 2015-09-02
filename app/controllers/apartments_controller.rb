@@ -1,16 +1,17 @@
 class ApartmentsController < ApplicationController
   def index
   end
-  
+
   def new
     @apartment = Apartment.new
   end
-  
+
   def create
     @apartment = Apartment.new(apartment_params)
     if @apartment.save
-      redirect_to @apartment, notice: "Apartment created successfully"
+      redirect_to apartments_path, notice: "Apartment created successfully"
     else
+      flash[:danger] = "Apartment listing could not be created"
       render :new
     end
   end
